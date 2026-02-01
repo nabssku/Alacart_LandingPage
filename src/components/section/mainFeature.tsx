@@ -130,7 +130,6 @@ const mainFeature = () => {
                 slideShadows: true
               }
             }
-            modules={[EffectCoverflow]}
             className='relative w-[20rem] p-2 sm:w-[30rem]  md:w-[40rem]'
 
           >
