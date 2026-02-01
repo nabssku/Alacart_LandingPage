@@ -10,6 +10,7 @@ import { siteConfig } from '@/constant/config';
 // !STARTERCONF Change these default meta
 // !STARTERCONF Look at @/constant/config to change them
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.title,
-    images: [`${siteConfig.url}/images/og.jpg`],
+    images: [`/images/og.jpg`],
     type: 'website',
     locale: 'en_US'
   },
@@ -37,14 +38,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/images/og.jpg`]
+    images: [`/images/og.jpg`]
   }
-  // authors: [
-  //   {
-  //     name: 'PT SAI',
-  //     url: '#',
-  //   },
-  // ],
 };
 
 export default function RootLayout({

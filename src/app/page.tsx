@@ -17,6 +17,8 @@ import MainFeature from '@/components/section/mainFeature';
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   return (
     <main>

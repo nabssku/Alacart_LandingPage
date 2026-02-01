@@ -119,7 +119,7 @@ const mainFeature = () => {
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
-            loop={true}
+            loop={false}
             slidesPerView={'auto'}
             coverflowEffect={
               {
