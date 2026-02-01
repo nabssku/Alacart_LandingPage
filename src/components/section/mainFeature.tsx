@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import * as React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -85,7 +87,7 @@ const mainFeature = () => {
               key={feat.id}
               className='relative h-[397px] w-[309px] overflow-hidden rounded-[12px] bg-white shadow-2xl  '
             >
-              
+
               <div className='absolute left-0 top-[220px] h-[177px] w-[309px] rounded-[26px_26px_12px_12px] bg-[#f1a501] shadow-[0px_-3.24px_6.48px_#0000000f,0px_0px_3.24px_#0000000a]'>
                 <div className='absolute left-[35px] top-[30px] h-[28px] w-[240px]'>
                   <button className='all-[unset] relative box-border flex h-[28px] w-[240px] items-center justify-center gap-[6.48px] rounded-[12px] bg-white p-[11.34px] shadow-[0px_6.48px_19.44px_#ffca404c]'>
@@ -113,65 +115,64 @@ const mainFeature = () => {
         </div>
         {/* SM - MD */}
         <div className="sm:block md:block lg:hidden 2xl:hidden">
-        <Swiper 
-          effect={'coverflow'}  
-          grabCursor={true} 
-          centeredSlides={true} 
-          loop={true} 
-          slidesPerView={'auto'} 
-          width={250}
-          coverflowEffect={
-            {
-              rotate:0,
-              stretch:0,
-              depth:100,
-              modifier:1,
-              slideShadows:true
+          <Swiper
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={'auto'}
+            coverflowEffect={
+              {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true
+              }
             }
-          }
+            modules={[EffectCoverflow]}
+            className='relative w-[20rem] p-2 sm:w-[30rem]  md:w-[40rem]'
 
-          className='relative w-[20rem] p-2 sm:w-[30rem]  md:w-[40rem]' 
-          
-        >
-           
+          >
+
             {feature.map((feat) => (
-               <SwiperSlide  key={feat.id}>
+              <SwiperSlide key={feat.id}>
                 <div className='flex items-center justify-center'>
-                <div className='relative h-[397px] w-[309px] overflow-hidden rounded-[12px] bg-white '>
-                  <div className='absolute left-0 top-[220px] h-[177px] w-[309px] rounded-[26px_26px_12px_12px] bg-[#f1a501] shadow-[0px_-3.24px_6.48px_#0000000f,0px_0px_3.24px_#0000000a]'>
-                    <div className='absolute left-[35px] top-[30px] h-[28px] w-[240px]'>
-                      <button className='all-[unset] relative box-border flex h-[28px] w-[240px] items-center justify-center gap-[6.48px] rounded-[12px] bg-white p-[11.34px] shadow-[0px_6.48px_19.44px_#ffca404c]'>
-                        <div className="relative mb-[-11.26px] mt-[-12.88px] w-fit whitespace-nowrap text-[13px] font-bold leading-[28.4px] tracking-[0] text-[#f1a501] [font-family:'Poppins-Bold',Helvetica]">
-                          {feat.title}
-                        </div>
-                      </button>
+                  <div className='relative h-[397px] w-[309px] overflow-hidden rounded-[12px] bg-white '>
+                    <div className='absolute left-0 top-[220px] h-[177px] w-[309px] rounded-[26px_26px_12px_12px] bg-[#f1a501] shadow-[0px_-3.24px_6.48px_#0000000f,0px_0px_3.24px_#0000000a]'>
+                      <div className='absolute left-[35px] top-[30px] h-[28px] w-[240px]'>
+                        <button className='all-[unset] relative box-border flex h-[28px] w-[240px] items-center justify-center gap-[6.48px] rounded-[12px] bg-white p-[11.34px] shadow-[0px_6.48px_19.44px_#ffca404c]'>
+                          <div className="relative mb-[-11.26px] mt-[-12.88px] w-fit whitespace-nowrap text-[13px] font-bold leading-[28.4px] tracking-[0] text-[#f1a501] [font-family:'Poppins-Bold',Helvetica]">
+                            {feat.title}
+                          </div>
+                        </button>
+                      </div>
+
+                      <p className="absolute left-[33px] top-[73px] w-[243px] text-center text-[12.2px] font-semibold leading-[normal] tracking-[0] text-white [font-family:'Poppins-SemiBold',Helvetica]">
+                        {feat.subtitle}
+                      </p>
                     </div>
 
-                    <p className="absolute left-[33px] top-[73px] w-[243px] text-center text-[12.2px] font-semibold leading-[normal] tracking-[0] text-white [font-family:'Poppins-SemiBold',Helvetica]">
-                      {feat.subtitle}
-                    </p>
+                    <Image
+                      src={feat.img}
+                      alt='Ala Carte'
+                      className='absolute left-[63px] top-[28px] h-[164px] w-[181px]'
+                      width={300}
+                      height={24}
+                      priority
+                    />
                   </div>
+                </div>
 
-                  <Image
-                    src={feat.img}
-                    alt='Ala Carte'
-                    className='absolute left-[63px] top-[28px] h-[164px] w-[181px]'
-                    width={300}
-                    height={24}
-                    priority
-                  />
-                </div>
-                </div>
-               
               </SwiperSlide>
             ))}
-           
-        </Swiper>
+
+          </Swiper>
         </div>
         {/* <div className='mt-5 grid grid-cols-6 content-center items-center justify-items-center gap-5 overflow-x-auto sm:grid md:grid lg:hidden 2xl:hidden'>
            
         </div> */}
-        
+
       </div>
     </div>
   );
